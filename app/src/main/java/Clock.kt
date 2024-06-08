@@ -56,7 +56,8 @@ class Clock {
     }
 
     @Composable
-    private fun ClockBox(time: Long) {
+    private fun ClockBox(time: Long)
+    {
         Box(
             modifier = Modifier
                 .size(90.dp)
