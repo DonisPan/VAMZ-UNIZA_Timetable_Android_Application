@@ -1,4 +1,6 @@
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,8 +45,7 @@ class Clock {
 
         Column(modifier = Modifier
             .fillMaxWidth()
-            .padding(1.dp, 10.dp),
-            verticalArrangement = Arrangement.Bottom) {
+            .padding(10.dp, 10.dp)) {
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center)
             {
@@ -63,6 +64,7 @@ class Clock {
                 .size(90.dp)
                 .padding(2.dp, 10.dp)
                 .clip(RoundedCornerShape(30.dp))
+                .border(BorderStroke(2.dp, Color.Gray.copy(alpha = 0.3f)))
                 .background(color = Color.LightGray))
         {
             Text(
