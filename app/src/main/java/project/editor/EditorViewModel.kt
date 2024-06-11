@@ -10,7 +10,6 @@ import project.Subjects
 import project.LectureType
 
 class EditorViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
-
     var subject: Subjects by mutableStateOf(savedStateHandle["subject"] ?: Subjects.entries[0])
         private set
     var teacherName: String by mutableStateOf(savedStateHandle["teacherName"] ?: subject.teachers.first())

@@ -121,7 +121,7 @@ class TimeTable
                     Button(onClick =
                     {
                         navController.navigate("editor/$index")
-                        //saveToLocal(context)
+                        //›saveToLocal(context)
                     }) {
                     Text(text = "Pridaj")
                     }
