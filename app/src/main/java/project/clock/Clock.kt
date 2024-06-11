@@ -1,3 +1,5 @@
+package project.clock
+
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,16 +28,17 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import java.util.Calendar
 
-class Clock {
+class Clock
+{
     @Composable
-    fun GetHours()
+    fun GetClock()
     {
         var currentTimeMillis by remember { mutableLongStateOf(0L) }
         LaunchedEffect(Unit)
         {
             while (true)
             {
-                delay(1000) // updatne sa kazdu sekundu
+                delay(1000) // update kazdu sekundu
                 currentTimeMillis = Calendar.getInstance().timeInMillis
             }
         }
@@ -43,10 +46,13 @@ class Clock {
         val minutes = (currentTimeMillis / (1000 * 60)) % 60
         val hours = (currentTimeMillis / (1000 * 60 * 60) % 24) + 2
 
-        Column(modifier = Modifier
+        Column(
+            modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp, 10.dp)) {
-            Row(modifier = Modifier.fillMaxWidth(),
+            .padding(10.dp, 10.dp))
+        {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center)
             {
                 ClockBox(hours)
